@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h2>Contacts</h2>
+<hr>
+
+<!--display all objects in model-->
+{% for eachItem in allContacts %}
+<p>{{ eachItem.name }}</p>
+<p>{{ eachItem.email }}</p>
+<p>{{ eachItem.phoneNumber }}</p>
+<!--delete that item-->
+<a href="{% url 'delete' eachItem.id %}">Delete User</a>
+<br>
+<!--update that item-->
+<a href="{% url 'edit' eachItem.id %}">Edit User</a>
+<hr>
+{% endfor %}
+<!--add user to model-->
+<a href="{% url 'add' %}">Add User</a>
+
+
+</body>
+</html>
